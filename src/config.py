@@ -2,10 +2,16 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import os
 
 import requests
+from dotenv import load_dotenv
 
-API_KEY = "6xVHX1YfwYtA1ZjWACCbKPfvzl6SiNaO"
-url = "https://api.apilayer.com/exchangerates_data/convert"
-headers = {"apikey": "6xVHX1YfwYtA1ZjWACCbKPfvzl6SiNaO"}
-response = requests.get(url, headers=headers)
+load_dotenv()
+github_token = os.getenv("GITHUB_TOKEN")
+headers = {"Authorization": f"token {github_token}"}
+response = requests.get("https://api.github.com/user", headers=headers)
+
+
+# Обработка ответа
+print(response.json())

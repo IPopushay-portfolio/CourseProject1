@@ -5,14 +5,13 @@ import os
 from datetime import datetime, timedelta
 
 import pandas as pd
-from black import datetime
 
 from src.config import BASE_DIR
 from src.external_api import conversion_currency
 
 CURRENT_DIR = os.path.dirname(__file__)
 LOGS_DIR = os.path.join(CURRENT_DIR, "..", "logs")
-log_file_path = os.path.join(LOGS_DIR, "utils.logs.log")
+log_file_path = os.path.join(LOGS_DIR, "utils.logs")
 logger = logging.getLogger("utils.logs")
 """Создание объекта логгера"""
 file_handler = logging.FileHandler(log_file_path, mode="w")
@@ -102,8 +101,12 @@ def get_transactions(path_file):
         return []
 
 
+CURRENT_DIR = os.path.dirname(__file__)
+transactions_csv_file = os.path.join(CURRENT_DIR, "operations.csv")
+
+
 def get_sum():
-    data = get_transactions("C:\\Users\\user\\Desktop\\Python\\my_prj\\test_poetry\\data\\operations.json")
+    data = get_transactions("transactions_csv_file")
     lst_str = []
     amount = []
     for i in data:

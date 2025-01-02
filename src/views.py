@@ -1,8 +1,8 @@
 from datetime import datetime
 
-import pandas as pd
+# import pandas as pd
 
-from src.utils import get_operations
+# from src.utils import get_operations
 
 
 def main_page(date: str):

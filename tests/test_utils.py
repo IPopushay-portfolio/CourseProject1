@@ -1,7 +1,6 @@
+from datetime import datetime
 from typing import Any
 from unittest.mock import patch
-
-from black import datetime
 
 from src.external_api import conversion_currency
 from src.utils import get_transactions
