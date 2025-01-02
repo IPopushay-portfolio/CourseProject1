@@ -1,13 +1,16 @@
-from black import datetime
+# This is a sample Python script.
 
-from src.utils import filter_by_date, get_operations
-from src.views import main_page
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def main():
-    df = get_operations()
-    df = filter_by_date(df, datetime(2020, 5, 20))
-    print(df)
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-    response = main_page("2020-05-20")
-    print(response)
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
